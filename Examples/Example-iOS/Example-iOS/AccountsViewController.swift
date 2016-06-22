@@ -79,7 +79,7 @@ class AccountsViewController: UITableViewController {
         
         if items.count == 1 {
             reloadData()
-            tableView.deleteSections(NSIndexSet(index: indexPath.section) as IndexSet, with: .automatic)
+            tableView.deleteSections(IndexSet(integer: indexPath.section) as IndexSet, with: .automatic)
         } else {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -90,7 +90,7 @@ class AccountsViewController: UITableViewController {
     
     func reloadData() {
         let items = Keychain.allItems(.genericPassword)
-        itemsGroupedByService = groupBy(xs: items) { item -> String in
+        itemsGroupedByService = groupBy(items) { item -> String in
             if let service = item["service"] as? String {
                 return service
             }
@@ -99,7 +99,7 @@ class AccountsViewController: UITableViewController {
     }
 }
 
-private func groupBy<C: Collection, K: Hashable>(xs: C, key: (C.Iterator.Element) -> K) -> [K:[C.Iterator.Element]] {
+private func groupBy<C: Collection, K: Hashable>(_ xs: C, key: (C.Iterator.Element) -> K) -> [K:[C.Iterator.Element]] {
     var gs: [K:[C.Generator.Element]] = [:]
     for x in xs {
         let k = key(x)

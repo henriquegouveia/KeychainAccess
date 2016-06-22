@@ -583,7 +583,7 @@ public class Keychain {
             #else
             status = SecItemUpdate(query, attributes)
             if status != errSecSuccess {
-                throw securityError(status: status)
+                throw securityError(status)
             }
             #endif
         case errSecItemNotFound:
