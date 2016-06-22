@@ -89,7 +89,7 @@ class AccountsViewController: UITableViewController {
     // MARK:
     
     func reloadData() {
-        let items = Keychain.allItems(itemClass: .GenericPassword)
+        let items = Keychain.allItems(.genericPassword)
         itemsGroupedByService = groupBy(xs: items) { item -> String in
             if let service = item["service"] as? String {
                 return service
