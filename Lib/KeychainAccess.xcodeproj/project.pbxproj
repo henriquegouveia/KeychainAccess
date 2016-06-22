@@ -192,9 +192,11 @@
 				TargetAttributes = {
 					140F195B1A49D79400B0016A = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 					};
 					140F19661A49D79500B0016A = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -282,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 148E44EB1BF9EEB3004FFEC1 /* KeychainAccess.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -289,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 148E44EB1BF9EEB3004FFEC1 /* KeychainAccess.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -296,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 148E44E91BF9EDE4004FFEC1 /* Tests.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -303,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 148E44E91BF9EDE4004FFEC1 /* Tests.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

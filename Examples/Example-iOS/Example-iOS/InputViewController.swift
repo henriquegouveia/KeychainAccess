@@ -31,11 +31,11 @@ class InputViewController: UITableViewController {
     
     // MARK:
     
-    @IBAction func cancelAction(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func saveAction(sender: UIBarButtonItem) {
+    @IBAction func saveAction(_ sender: UIBarButtonItem) {
         let keychain: Keychain
         if let service = serviceField.text where !service.isEmpty {
             keychain = Keychain(service: service)
@@ -44,19 +44,19 @@ class InputViewController: UITableViewController {
         }
         keychain[usernameField.text!] = passwordField.text
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func editingChanged(sender: UITextField) {
+    @IBAction func editingChanged(_ sender: UITextField) {
         switch (usernameField.text, passwordField.text) {
         case let (username?, password?):
-            saveButton.enabled = !username.isEmpty && !password.isEmpty
+            saveButton.isEnabled = !username.isEmpty && !password.isEmpty
         case (_?, nil):
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         case (nil, _?):
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         case (nil, nil):
-            saveButton.enabled = false
+            saveButton.isEnabled = false
         }
     }
 
